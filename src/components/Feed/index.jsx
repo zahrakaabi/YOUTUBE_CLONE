@@ -39,6 +39,10 @@ function Feed() {
           Copyright &copy;2022 | zahra kaabi
         </Typography>
       </Box>
+
+      <Box>
+        <Typography>New <span>Videos</span></Typography>
+      </Box>
     </Stack>
   )
 }

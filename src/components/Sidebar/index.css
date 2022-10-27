@@ -1,0 +1,42 @@
+.category-btn{
+    font-weight: bold !important;
+    text-transform: capitalize;
+    cursor:pointer;
+    background: transparent;
+    outline: none;
+    border: none;
+    color:#fff;
+    padding: 7px 15px;
+    margin: 7px 0px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.category-btn span:first-of-type {
+    margin-right: 15px;
+}
+
+.category-btn:hover {
+    background-color: #FC1503 !important;
+    color: white !important;
+    opacity: 1;
+}
+
+.category-btn:hover span {
+    opacity: 1;
+    color: white !important;
+}
+
+.active {
+    background-color: #FC1503;
+}
+
+.blured {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 992px) {
+.category-btn{
+    margin: 10px;
+}
+}
