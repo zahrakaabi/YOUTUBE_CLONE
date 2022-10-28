@@ -36,7 +36,8 @@
 }
 
 @media screen and (max-width: 992px) {
-.category-btn{
-    margin: 10px;
-}
+    .category-btn{
+        margin: 10px;
+        min-width: fit-content !important;
+    }
 }

@@ -21,11 +21,10 @@ function SearchBar() {
     <Paper
       component='form'
       varient='outlined'
-      elevation='0'
+      elevation={0}
       onSubmit={() => {}}
       sx={{
         pl: 2,
-        mr: { sm: 5 },
         borderRadius: 20
       }}
     >

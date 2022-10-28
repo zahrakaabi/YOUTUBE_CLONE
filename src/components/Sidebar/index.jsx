@@ -4,6 +4,9 @@
 // Packages
 import { Stack } from '@mui/material';
 
+// PropTypes
+import PropTypes from 'prop-types';
+
 // Fake API CATEGORIES
 import { categories } from '../../utils/constants'
 
@@ -13,22 +16,22 @@ import './index.css';
 /* ---------------------------------------------- */
 /*                    SIDEBAR                     */
 /* ---------------------------------------------- */
-function Sidebar() {
-  const SELECTED_CATEGORY = 'New';
-
+function Sidebar({ selectedCategory, setSelectedCategory }) {
   /* *************** RENDERING ****************** */
   return (
     <Stack
         direction={{ xs: 'row', md: 'column' }}
         sx={{
             overflowY: 'auto',
-            height: { xs: 'auto', md: '92%' }
+            height: { xs: 'auto', md: '92%' },
+            width: { xs: 'fit-content', md: '200px' }
         }}
     >
         {categories.map((category, index) => (
             <button 
                 key={index}
-                className={`category-btn ${category.name === SELECTED_CATEGORY ? 'active' : 'blured'} flex justify-start items-center`}
+                onClick={() => setSelectedCategory(category.name)}
+                className={`category-btn ${category.name === selectedCategory ? 'active' : 'blured'} flex justify-start items-center`}
             >
                 <span>{category.icon}</span>
                 <span>{category.name}</span>
@@ -36,6 +39,11 @@ function Sidebar() {
         ))}
     </Stack>
   )
+}
+
+Sidebar.propTypes = {
+    selectedCategory: PropTypes.string.isRequired,
+    setSelectedCategory: PropTypes.func.isRequired
 }
 
 export default Sidebar;
