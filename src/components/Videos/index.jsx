@@ -2,7 +2,6 @@
 /*                   DEPENDENCIES                 */
 /* ---------------------------------------------- */
 // Packages
-import { useState, useEffect } from 'react';
 import { Stack, Box } from '@mui/material';
 
 // PropTypes
@@ -18,7 +17,6 @@ import './index.css';
 /*                     VIDEOS                     */
 /* ---------------------------------------------- */
 function Videos({ videos }) {
-    console.log('data', videos)
   /* *************** RENDERING ****************** */
   return (
     <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>

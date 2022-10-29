@@ -10,7 +10,7 @@ import { CheckCircle } from '@mui/icons-material';
 import PropTypes from 'prop-types';
 
 // UI Local Components
-import { demoThumbnailURL, demoVideoURL, demoVideoTitle, demoChannelURL, demoChannelTitle} from '../../utils/constants';
+import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle} from '../../utils/constants';
 
 // Style
 import './index.css';
@@ -18,11 +18,31 @@ import './index.css';
 /* ---------------------------------------------- */
 /*                  VIDEO CARD                    */
 /* ---------------------------------------------- */
-function VideoCard({ video: { id: { videoId }, { snippet } } }) {
-  console.log('tada', snippet)
+function VideoCard({ video: { id: { videoId }, snippet } }) {
   /* *************** RENDERING ****************** */
   return (
-    <Link to="#">video card</Link>
+    <Card sx={{ width: {md: '320px', xs:'100%' }, boxShadow: 'none', borderRadius: 0 }}>
+      <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+        <CardMedia 
+          image={snippet?.thumbnails?.high?.url || demoThumbnailUrl}
+          alt={snippet?.title}
+          sx={{ width: '358px', height: '180px' }}
+        />
+      </Link>
+      <CardContent sx={{ height: 106, background: '#222' }}>
+        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+          <Typography variant="subtitle1" fontWeight="bold" color="#fff" >
+            {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0,60)}
+          </Typography>
+        </Link>
+        <Link to={snippet?.chaneelId ? `/channel/${snippet?.channelId}` : demoChannelUrl}>
+          <Typography variant="subtitle2" fontWeight="bold" color="gray" >
+            {snippet?.channelTitle.slice(0, 60) || demoChannelTitle.slice(0,60)}
+            <CheckCircle sx={{ fontSize: 12, color: 'gray', ml: '5px' }} />
+          </Typography>
+        </Link>
+      </CardContent>
+    </Card>
   )
 }
 
