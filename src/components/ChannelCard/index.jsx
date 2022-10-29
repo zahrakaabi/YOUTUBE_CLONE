@@ -18,14 +18,15 @@ import './index.css';
 /* ---------------------------------------------- */
 /*                CHANNEL CARD                    */
 /* ---------------------------------------------- */
-function ChannelCard({ channelDetail }) {
+function ChannelCard({ channelDetail, marginTop }) {
   /* *************** RENDERING ****************** */
   return (
     <Box sx={{ 
       boxShadow: 'none', borderRadius: 0, 
-      display: 'flex', justifyContent: 'center', alignItems: 'center',
+      display: 'flex', justifyContent: 'center',
       width: { xs: '356px', md: '320px' },
-      height: '326px', margin: 'auto'
+      height: '326px', margin: 'auto',
+      marginTop: marginTop
     }}>
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
         <CardContent 
@@ -54,7 +55,8 @@ function ChannelCard({ channelDetail }) {
 }
 
 ChannelCard.propTypes = {
-    channelDetail: PropTypes.string.isRequired
+    channelDetail: PropTypes.string.isRequired,
+    marginTop: PropTypes.string
 }
 
 export default ChannelCard;
