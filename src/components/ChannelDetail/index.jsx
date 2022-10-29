@@ -14,7 +14,7 @@ import { ChannelCard, Videos } from '../';
 import './index.css';
 
 /* ---------------------------------------------- */
-/*                     NAVBAR                     */
+/*                 CHANNEL DETAIL                */
 /* ---------------------------------------------- */
 function ChannelDetail() {
   const { id } = useParams(); // destruct id from URL
