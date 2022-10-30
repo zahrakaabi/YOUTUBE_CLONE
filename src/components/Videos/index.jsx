@@ -16,10 +16,14 @@ import './index.css';
 /* ---------------------------------------------- */
 /*                     VIDEOS                     */
 /* ---------------------------------------------- */
-function Videos({ videos }) {
+function Videos({ videos, direction }) {
+  if (!videos?.length) {
+    return 'Loading...';
+  }
+
   /* *************** RENDERING ****************** */
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack direction={ direction || "row" } flexWrap="wrap" justifyContent="start" gap={2}>
         {videos.map((video, index) => (
             <Box key={index} direction="column">
                 {video.id.videoId && <VideoCard video={video} />}
@@ -31,7 +35,8 @@ function Videos({ videos }) {
 }
 
 Videos.propTypes = {
-    videos: PropTypes.array.isRequired
+    videos: PropTypes.array.isRequired,
+    direction: PropTypes.string
 }
 
 export default Videos;
