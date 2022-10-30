@@ -8,7 +8,7 @@ import { Stack, Box } from '@mui/material';
 import PropTypes from 'prop-types';
 
 // Local UI Components
-import { VideoCard, ChannelCard } from '../';
+import { VideoCard, ChannelCard, Loading } from '../';
 
 // Style
 import './index.css';
@@ -18,7 +18,7 @@ import './index.css';
 /* ---------------------------------------------- */
 function Videos({ videos, direction }) {
   if (!videos?.length) {
-    return 'Loading...';
+    return <Loading />;
   }
 
   /* *************** RENDERING ****************** */

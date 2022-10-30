@@ -11,7 +11,7 @@ import ReactPlayer from 'react-player';
 import { CheckCircle } from '@mui/icons-material';
 
 // UI Local Components
-import { Videos } from '../';
+import { Videos, Loading } from '../';
 
 // Fetch API
 import { fetchAPI } from '../../utils/fetchFromAPI';
@@ -36,7 +36,7 @@ function VideoDetail() {
   }, [id])
 
   if (!videoDetail?.snippet) {
-    return 'Loading...';
+    return <Loading />;
   }
 
   const { snippet : { title, channelId, channelTitle }, statistics : { viewCount, likeCount } } = videoDetail;

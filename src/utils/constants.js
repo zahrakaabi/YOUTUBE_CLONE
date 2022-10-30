@@ -43,7 +43,7 @@ export const categories = [
 /*                     IMAGES                     */
 /* ---------------------------------------------- */
 // Logo
-export const logo = 'https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png';
+export const logo = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/YouTube_light_logo_%282017%29.svg/1280px-YouTube_light_logo_%282017%29.svg.png';
 
 // Images
 export const demoThumbnailUrl = 'https://elcomercio.pe/resizer/ZhGQE2Crm8VCyKfLl1roaJlOfFc=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/X4ZRSY5C6JED7O5ZETOJVCZLEE.jpg';
