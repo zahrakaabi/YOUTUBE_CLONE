@@ -1,0 +1,6 @@
+.react-player {
+    width: 100% !important;
+    height: auto !important;
+    position: relative;
+    z-index: -1;
+}
